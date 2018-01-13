@@ -1,0 +1,22 @@
+# Attack program targetting only the reference monitors throwing compile time errors
+# READ OPERATION
+# New File Operation
+# Clean up of existing file
+if "test.txt.a" in listfiles():
+  removefile("test.txt.a")
+if "test.txt.b" in listfiles():
+  removefile("test.txt.b")
+
+# Open File Function Call
+myfile=ABopenfile("test.txt",True)  #Create an AB file
+
+# Write valid data to the file
+try:
+ assert(myfile.readat(None,0))
+except:
+ log("Read operation not permitted!! Accuracy compromised!!")
+finally:
+#Close the file
+ myfile.close()
+ 
+

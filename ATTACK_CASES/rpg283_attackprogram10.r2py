@@ -1,0 +1,37 @@
+# WRITE OPERATION
+# New File 
+# Clean up of existing file
+if "test.txt.a" in listfiles():
+  removefile("test.txt.a")
+if "test.txt.b" in listfiles():
+  removefile("test.txt.b")
+
+if "test1.txt.a" in listfiles():
+  removefile("test1.txt.a")
+if "test1.txt.b" in listfiles():
+  removefile("test1.txt.b")
+
+if "test2.txt.a" in listfiles():
+  removefile("test2.txt.a")
+if "test2.txt.b" in listfiles():
+  removefile("test2.txt.b")
+
+def writeatmyfile1():
+ myfile1=ABopenfile("test.txt",True)
+ myfile1.writeat('SRahulE',0)
+ myfile1.close()
+
+def writeatmyfile2():
+ myfile2=ABopenfile("test1.txt",True)
+ myfile2.writeat('SRahul1E',0)
+ myfile2.close()
+
+def writeatmyfile3():
+ myfile3=ABopenfile("test2.txt",True)
+ myfile3.writeat('SRahul2E',0)
+ myfile3.close()
+
+createthread(writeatmyfile1)
+createthread(writeatmyfile2)
+createthread(writeatmyfile3) 
+
