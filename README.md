@@ -12,6 +12,10 @@ Reference monitor to maintain data integrity of files
 6. When close() is called on the file, if a file is not valid, it is discarded. if both files are valid, the older one is discarded.
 ##### Note : 
 The behavior of other file system calls should remain unchanged. This means listfiles(), removefile(), and calls to files  accessed with openfile() instead of ABopenfile() remain unchanged by this reference monitor.
+#### Design Paradigms considered
+1. Accuracy: The security layer should only stop certain actions from being blocked. All other actions should be allowed. For example, if an app tries to read data from a valid file, this must succeed as per normal and must not be blocked. All situations that are not described above must match that of the underlying API.
+2. Efficiency: The security layer should use a minimum number of resources, so performance is not compromised. For example, keeping a complete copy of every file on disk in memory would be forbidden.
+3. Security: The attacker should not be able to circumvent the security layer. Hence, if the attacker can cause an invalid file to be read or can write to a valid file, then the security is compromised, for example.
 ### Attack Case Explanation
 1. Attack Case 1 : It checks if valid data write to a file is successful i.e. checks if the accuracy of the system is not compromised.
 2. Attack Case 2 : It checks if an existing file is reopened successfully i.e checks if the accuracy of the system is not compromised.
