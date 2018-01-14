@@ -13,7 +13,8 @@ Reference monitor to maintain data integrity of files
 7. It is important to keep in mind that only lowercase file names are allowed. For example:<br>
 Open a file : <br>
 myfile=openfile("look.txt",True) <br>
-look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples of other invalid files names are, _look.txt, look/.txt, and look().txt. Essentially all non-alphanumeric characters are not allowed.<br>
+look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples of other invalid files names are, _look.txt, look/.txt, and look().txt. Essentially all non-alphanumeric characters are not allowed.
+8. The reference monitor must not any unexpected errors or produce any output i.e. should not log anything. 
 ##### Note : The behavior of other file system calls should remain unchanged. This means listfiles(), removefile(), and calls to files  accessed with openfile() instead of ABopenfile() remain unchanged by this reference monitor.
 #### Design Paradigms considered
 1. Accuracy: The security layer should only stop certain actions from being blocked. All other actions should be allowed. For example, if an app tries to read data from a valid file, this must succeed as per normal and must not be blocked. All situations that are not described above must match that of the underlying API.
@@ -37,9 +38,15 @@ look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples o
 python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py
 (Replace [security_layer].r2py and [program].r2py by the names of the Reference Monitor and Attack Case that you want to run.)
 ##### Note :repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.
-3. Some important references to learn Repy V2 <br>
+3. It is possible to add multiple security layers and Attack Cases to Repy, this may be useful for testing multiple security layers against multiple test cases. This is done with the following command at the terminal:
+for referencemonitor in reference_monitor_*; do for testcase in <attack_case>_*; do python repy.py restrictions.default encasementlib.r2py $referencemonitor $testcase; done; done
+##### Note : All reference monitor names should start with the word reference_monitor_ and all Attack Cases should also start with same letters which replace <attack_case> in the above command.The above command will print out the output from each attack case.
+4. If you want to spot the referencemonitor that failed during the test run, add echo the name of each referencemonitor before the inner loop, like so:
+for referencemonitor in reference_monitor_*; do echo $referencemonitor under test; for testcase in <attack_case>_*; do python repy.py restrictions.default encasementlib.r2py $referencemonitor $testcase; done; done
+##### Note : The above command will print out the name of each reference monitor before it starts executing the attack case against it.
+5. Some important references to learn Repy V2 <br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2API.md">Basic Repy V2 Syntax</a><br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a>
-4. Some below points to be considered
-• Repy is a subset of Python, but its syntax is slightly different. For example, Python's print statement cannot be used; Repy has log for that.<br>
-• 	
+##### Note :In repy log replaces print from python.
+
+ 	
