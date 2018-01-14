@@ -29,7 +29,6 @@ The behavior of other file system calls should remain unchanged. This means list
 10. Attack Case 10 : It checks if the system handles writing in multiple files simultaneously i.e. checks if the accuracy of the system is not compromised. 
 ## How to Setup
 1. Please refer to the below link for details on how to setup Repy V2
-### How to use Repy V2
 <a href= "https://github.com/SeattleTestbed/docs/blob/master/Contributing/BuildInstructions.md#prerequisites">Repy V2 Setup</a><br>
 2. Once you have built RepyV2 into a directory of your choice, change into that directory. Use the command below in order to run your RepyV2 programs:
 python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py
