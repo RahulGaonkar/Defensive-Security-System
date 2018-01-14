@@ -35,6 +35,6 @@ python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [pr
 (Replace [security_layer].r2py and [program].r2py by the names of the Reference Monitor and Attack Case that you want to run.)
 #### Note
 repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.
-3. Some important references to learn Repy V2 
+3. Some important references to learn Repy V2 <br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2API.md">Basic Repy V2 Syntax</a><br>
-<a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a><br>
+<a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a>
