@@ -34,14 +34,14 @@ look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples o
 ## How to Setup
 1. Please refer to the below link for details on how to setup Repy V2 <br>
 <a href= "https://github.com/SeattleTestbed/docs/blob/master/Contributing/BuildInstructions.md#prerequisites">Repy V2 Setup</a><br>
-2. Once you have built RepyV2 into a directory of your choice, change into that directory. Use the command below in order to run your RepyV2 programs:
+2. Once you have built RepyV2 into a directory of your choice, change into that directory. Use the command below in order to run your RepyV2 programs:<br>
 python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py
 (Replace [security_layer].r2py and [program].r2py by the names of the Reference Monitor and Attack Case that you want to run.)
 ##### Note :repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.
-3. It is possible to add multiple security layers and Attack Cases to Repy, this may be useful for testing multiple security layers against multiple test cases. This is done with the following command at the terminal:
+3. It is possible to add multiple security layers and Attack Cases to Repy, this may be useful for testing multiple security layers against multiple test cases. This is done with the following command at the terminal:<br>
 for referencemonitor in reference_monitor_*; do for testcase in <attack_case>_*; do python repy.py restrictions.default encasementlib.r2py $referencemonitor $testcase; done; done
 ##### Note : All reference monitor names should start with the word reference_monitor_ and all Attack Cases should also start with same letters which replace <attack_case> in the above command.The above command will print out the output from each attack case.
-4. If you want to spot the referencemonitor that failed during the test run, add echo the name of each referencemonitor before the inner loop, like so:
+4. If you want to spot the referencemonitor that failed during the test run, add echo the name of each referencemonitor before the inner loop, like so:<br>
 for referencemonitor in reference_monitor_*; do echo $referencemonitor under test; for testcase in <attack_case>_*; do python repy.py restrictions.default encasementlib.r2py $referencemonitor $testcase; done; done
 ##### Note : The above command will print out the name of each reference monitor before it starts executing the attack case against it.
 5. Some important references to learn Repy V2 <br>
