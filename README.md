@@ -30,12 +30,12 @@ The behavior of other file system calls should remain unchanged. This means list
 ## How to Setup
 1. Please refer to the below link for details on how to setup Repy V2
 ### How to use Repy V2
-<a href= "https://github.com/SeattleTestbed/docs/blob/master/Contributing/BuildInstructions.md#prerequisites">Repy V2 Setup</a>
+<a href= "https://github.com/SeattleTestbed/docs/blob/master/Contributing/BuildInstructions.md#prerequisites">Repy V2 Setup</a><br>
 2. Once you have built RepyV2 into a directory of your choice, change into that directory. Use the command below in order to run your RepyV2 programs:
 python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py
 (Replace [security_layer].r2py and [program].r2py by the names of the Reference Monitor and Attack Case that you want to run.)
 #### Note
 repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.
 3. Some important references to learn Repy V2 
-<a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2API.md">Basic Repy V2 Syntax</a>
-<a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a>
+<a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2API.md">Basic Repy V2 Syntax</a><br>
+<a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a><br>
