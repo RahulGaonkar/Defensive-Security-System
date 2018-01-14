@@ -10,8 +10,8 @@ Reference monitor to maintain data integrity of files
 4. When the app calls readat(), all reads must be performed on the valid file. Similarly, when the app calls writeat(), all writes must be performed on the invalid file. 
 5. If the app uses ABopenfile() to create a file that does not exist (by setting create=True when calling ABopenfile()), the reference monitor will create a new file 'SE' in filename.a and an empty file called filename.b. 
 6. When close() is called on the file, if a file is not valid, it is discarded. if both files are valid, the older one is discarded.
-7. It is important to keep in mind that only lowercase file names are allowed. For example:
-##### Open a file
+7. It is important to keep in mind that only lowercase file names are allowed. For example:<br>
+Open a file : <br>
 myfile=openfile("look.txt",True) <br>
 look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples of other invalid files names are, _look.txt, look/.txt, and look().txt. Essentially all non-alphanumeric characters are not allowed.<br>
 ##### Note : The behavior of other file system calls should remain unchanged. This means listfiles(), removefile(), and calls to files  accessed with openfile() instead of ABopenfile() remain unchanged by this reference monitor.
