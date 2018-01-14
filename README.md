@@ -10,8 +10,7 @@ Reference monitor to maintain data integrity of files
 4. When the app calls readat(), all reads must be performed on the valid file. Similarly, when the app calls writeat(), all writes must be performed on the invalid file. 
 5. If the app uses ABopenfile() to create a file that does not exist (by setting create=True when calling ABopenfile()), the reference monitor will create a new file 'SE' in filename.a and an empty file called filename.b. 
 6. When close() is called on the file, if a file is not valid, it is discarded. if both files are valid, the older one is discarded.
-##### Note : 
-The behavior of other file system calls should remain unchanged. This means listfiles(), removefile(), and calls to files  accessed with openfile() instead of ABopenfile() remain unchanged by this reference monitor.
+##### Note : The behavior of other file system calls should remain unchanged. This means listfiles(), removefile(), and calls to files  accessed with openfile() instead of ABopenfile() remain unchanged by this reference monitor.
 #### Design Paradigms considered
 1. Accuracy: The security layer should only stop certain actions from being blocked. All other actions should be allowed. For example, if an app tries to read data from a valid file, this must succeed as per normal and must not be blocked. All situations that are not described above must match that of the underlying API.
 2. Efficiency: The security layer should use a minimum number of resources, so performance is not compromised. For example, keeping a complete copy of every file on disk in memory would be forbidden.
@@ -33,8 +32,7 @@ The behavior of other file system calls should remain unchanged. This means list
 2. Once you have built RepyV2 into a directory of your choice, change into that directory. Use the command below in order to run your RepyV2 programs:
 python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py
 (Replace [security_layer].r2py and [program].r2py by the names of the Reference Monitor and Attack Case that you want to run.)
-##### Note :
-repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.<br><br>
+##### Note :repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.<br><br>
 3. Some important references to learn Repy V2 <br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2API.md">Basic Repy V2 Syntax</a><br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a>
