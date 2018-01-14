@@ -27,3 +27,5 @@ The behavior of other file system calls should remain unchanged. This means list
 8. Attack Case 8 : It checks if the system is allowing to perform a simple read operation i.e. checks if the accuracy of the system is not compromised.
 9. Attack Case 9 : It checks if the system handles writing in multiple files simultaneously i.e. checks if the accuracy of the system is not compromised.
 10. Attack Case 10 : It checks if the system handles writing in multiple files simultaneously i.e. checks if the accuracy of the system is not compromised. 
+## How to Setup
+
