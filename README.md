@@ -35,7 +35,7 @@ look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples o
 1. Please refer to the below link for details on how to setup Repy V2 <br>
 <a href= "https://github.com/SeattleTestbed/docs/blob/master/Contributing/BuildInstructions.md#prerequisites">Repy V2 Setup</a><br>
 2. Once you have built RepyV2 into a directory of your choice, change into that directory. Use the command below in order to run your RepyV2 programs:<br>
-python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py
+python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [program].r2py <br>
 (Replace [security_layer].r2py and [program].r2py by the names of the Reference Monitor and Attack Case that you want to run.)
 ##### Note :repy.py, restrictions.default, encasementlib.r2py, the security layer and the program you want to run should be in the same current working directory.
 3. It is possible to add multiple security layers and Attack Cases to Repy, this may be useful for testing multiple security layers against multiple test cases. This is done with the following command at the terminal:<br>
