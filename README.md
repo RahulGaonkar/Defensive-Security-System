@@ -10,6 +10,10 @@ Reference monitor to maintain data integrity of files
 4. When the app calls readat(), all reads must be performed on the valid file. Similarly, when the app calls writeat(), all writes must be performed on the invalid file. 
 5. If the app uses ABopenfile() to create a file that does not exist (by setting create=True when calling ABopenfile()), the reference monitor will create a new file 'SE' in filename.a and an empty file called filename.b. 
 6. When close() is called on the file, if a file is not valid, it is discarded. if both files are valid, the older one is discarded.
+7. It is important to keep in mind that only lowercase file names are allowed. For example:
+##### Open a file
+myfile=openfile("look.txt",True) <br>
+look.txt is a valid file name, however Look.txt and LOOK.TXT are not. Examples of other invalid files names are, _look.txt, look/.txt, and look().txt. Essentially all non-alphanumeric characters are not allowed.<br>
 ##### Note : The behavior of other file system calls should remain unchanged. This means listfiles(), removefile(), and calls to files  accessed with openfile() instead of ABopenfile() remain unchanged by this reference monitor.
 #### Design Paradigms considered
 1. Accuracy: The security layer should only stop certain actions from being blocked. All other actions should be allowed. For example, if an app tries to read data from a valid file, this must succeed as per normal and must not be blocked. All situations that are not described above must match that of the underlying API.
@@ -36,3 +40,6 @@ python repy.py restrictions.default encasementlib.r2py [security_layer].r2py [pr
 3. Some important references to learn Repy V2 <br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2API.md">Basic Repy V2 Syntax</a><br>
 <a href = "https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md">Repy V2 vs Python</a>
+4. Some below points to be considered
+• Repy is a subset of Python, but its syntax is slightly different. For example, Python's print statement cannot be used; Repy has log for that.<br>
+• 	
